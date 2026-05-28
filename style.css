@@ -1,0 +1,94 @@
+/* Resets básicos para evitar margens fantasmas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    
+    /* Configuração da imagem de fundo */
+    background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+    
+    color: #333;
+    padding: 20px; /* Evita que o container encoste nas bordas em telas pequenas */
+}
+
+/* Película escura sobre a imagem para garantir que o texto seja legível */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% de opacidade */
+    z-index: 1;
+}
+
+/* Caixa de conteúdo centralizada e responsiva */
+.content-container {
+    position: relative;
+    z-index: 2; /* Fica acima da overlay */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco levemente transparente */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    
+    /* Responsividade inteligente */
+    width: 100%;
+    max-width: 600px; /* Não passa disso em telas grandes */
+}
+
+h1 {
+    color: #2e7d32; /* Verde Agrinho */
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #558b2f;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+
+/* Media Query para telas muito pequenas (ex: celulares antigos) */
+@media (max-width: 480px) {
+    .content-container {
+        padding: 25px 15px;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
+    p { font-size: 1rem; }
+}
